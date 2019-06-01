@@ -1,6 +1,6 @@
 # praca_magisterska_nuxt
 
-> My kickass Nuxt.js project
+> My Nuxt.js project
 
 ## Build Setup
 
