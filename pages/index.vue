@@ -6,7 +6,7 @@
         praca_magisterska_nuxt
       </h1>
       <h2 class="subtitle">
-        My kickass Nuxt.js project
+        Projekt pracy magisterskiej
       </h2>
       <div class="links">
         <a
