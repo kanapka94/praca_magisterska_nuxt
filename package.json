@@ -1,7 +1,7 @@
 {
   "name": "praca_magisterska_nuxt",
   "version": "1.0.0",
-  "description": "My kickass Nuxt.js project",
+  "description": "My Nuxt.js project",
   "author": "Adam Konopka",
   "private": true,
   "scripts": {
