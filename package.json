@@ -1,8 +1,8 @@
 {
   "name": "praca_magisterska_nuxt",
   "version": "1.0.0",
-  "description": "My Nuxt.js project",
-  "author": "Adam Konopka",
+  "description": "Praca magisterska Nuxt",
+  "author": "Adam Konopka <adamkonopka@interia.pl>",
   "private": true,
   "scripts": {
     "dev": "nuxt",

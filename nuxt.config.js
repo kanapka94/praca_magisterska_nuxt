@@ -10,7 +10,12 @@ module.exports = {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
+      { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=Edge' },
+      { hid: 'og:title', property: 'og:title', content: 'List of drinks' },
+      { hid: 'og:url', property: 'og:url', content: 'https://otejporze.pl' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'otejporze.pl' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -27,6 +32,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/_main.scss'
   ],
 
   /*
