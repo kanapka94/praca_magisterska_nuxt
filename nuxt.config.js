@@ -45,9 +45,21 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    // Doc: https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
+  /*
+  ** Style resources module configuration
+  */
+  styleResources: {
+    scss: [
+      '@/assets/scss/_vars.scss',
+      '@/assets/scss/_mixins.scss',
+      '@/assets/scss/_transitions.scss'
+    ]
+  },
   /*
   ** Axios module configuration
   */
