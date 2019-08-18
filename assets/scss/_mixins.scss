@@ -1,3 +1,22 @@
+@mixin main-container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 @mixin font-primary($font-size: 24px, $color: #2d2d3c) {
   font-family: 'Dosis', sans-serif;
   font-size: $font-size;
