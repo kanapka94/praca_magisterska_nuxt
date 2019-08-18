@@ -63,7 +63,7 @@
     -webkit-touch-callout: none;
 
     &:checked ~ span {
-      background-color: #232323;
+      background-color: $violet;
       opacity: 1;
       transform: rotate(45deg);
 
@@ -84,7 +84,7 @@
     margin-bottom: 5px;
     display: block;
 
-    background: #abcabc;
+    background: $pink;
     border-radius: 3px;
     transform-origin: 4px 0;
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),

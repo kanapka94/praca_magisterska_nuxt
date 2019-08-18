@@ -35,6 +35,7 @@
     width: 64px;
     height: 64px;
     padding: 10px;
+    background-color: #f3faf3;
   }
 
   .burger {

@@ -44,7 +44,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(186, 217, 84, .8);
+    background-color: rgba(118, 20, 255, 0.6);
     opacity: 0;
     visibility: hidden;
     transition: .3s cubic-bezier(0.77,0.2,0.05,1.0);

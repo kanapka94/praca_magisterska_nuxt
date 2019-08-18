@@ -19,6 +19,7 @@
 <style lang="scss" scoped>
   .link {
     @include font-secondary;
+    display: inline-block;
     text-decoration: none;
     overflow: hidden;
 

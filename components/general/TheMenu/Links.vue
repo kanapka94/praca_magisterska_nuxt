@@ -23,17 +23,17 @@
         </li>
         <li class="item">
           <link-component href="/lista/szklanki">
-            Szklanki
+            Rodzaje szklanek
           </link-component>
         </li>
         <li class="item">
           <link-component href="/lista/nasycenie">
-            Nasycenie
+            Nasycenie alkolu
           </link-component>
         </li>
         <li class="item">
           <link-component href="/lista/kategorie">
-            Kategorie
+            Kategorie drinków
           </link-component>
         </li>
       </ul>
