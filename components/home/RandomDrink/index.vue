@@ -1,6 +1,6 @@
 <template>
   <div class="random-drink">
-    <div class="title">Przepis na dziś</div>
+    <div class="title">Losowy przepis</div>
     <nuxt-link :to="`/drink/${drink.idDrink}`">
       <img :src="drink.strDrinkThumb" alt="" class="image">
     </nuxt-link>
