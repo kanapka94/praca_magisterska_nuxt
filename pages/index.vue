@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <random-drink :drink="drink"/>
     <section class="search">
       <h2 class="title">
         Wyszukaj informacje na temat
@@ -32,10 +33,11 @@
   import SearchBar from '../components/home/SearchBar/index'
   import RadioList from '../components/general/RadioList/index'
   import LinkComponent from '../components/general/Link'
+  import RandomDrink from '../components/home/RandomDrink/index'
 
   export default {
     name: 'PageIndex',
-    components: { LinkComponent, RadioList, SearchBar },
+    components: { RandomDrink, LinkComponent, RadioList, SearchBar },
     data () {
       return {
         form: {
@@ -44,22 +46,42 @@
         },
         options: [
           {
-            name: 'Drink',
+            name: 'Drinka',
             value: 'drink',
             group: 'searchType'
           },
           {
-            name: 'Składnik',
+            name: 'Składnika',
             value: 'ingredient',
             group: 'searchType'
           }
         ]
+      }
+    },
+    async asyncData ({ app }) {
+      const response = await app.$service.drinks.getRandom()
+      return {
+        drink: response.drinks[0]
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  .page {
+    position: relative;
+  }
+
+  .random-drink {
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
   .search {
     display: flex;
     flex-direction: column;

@@ -55,6 +55,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/service'
   ],
 
   /*
@@ -81,6 +82,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'https://www.thecocktaildb.com/api/json/v1/1'
   },
 
   /*

@@ -63,7 +63,7 @@
     outline: none;
 
     &:focus {
-      border-color: $green-light;
+      border-color: $pink;
     }
   }
 </style>
