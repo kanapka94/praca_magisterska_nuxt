@@ -27,6 +27,12 @@
 <style lang="scss" scoped>
   .burger {
     position: relative;
+    width: 40px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .checkbox {
@@ -42,23 +48,20 @@
     &:checked ~ span {
       background-color: #232323;
       opacity: 1;
-      transform: rotate(45deg) translate(-2px, -1px);
+      transform: rotate(45deg);
 
       &:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-      }
-
-      &:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
+      }
+
+      &:nth-last-child(1) {
+        transform: rotate(-45deg) translate(0, 1px);
       }
     }
   }
 
   span {
-    position: relative;
-    top: 10px;
-    right: 10px;
     width: 33px;
     height: 4px;
     margin-bottom: 5px;
@@ -75,7 +78,7 @@
       transform-origin: 0 0;
     }
 
-    &:nth-last-child(2) {
+    &:nth-last-child(1) {
       transform-origin: 0 100%;
     }
   }

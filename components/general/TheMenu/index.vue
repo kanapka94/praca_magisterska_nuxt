@@ -1,14 +1,26 @@
 <template>
   <div class="container">
-    <burger/>
+    <burger @click="burgerClick"/>
+    <sidebar :opened="opened"/>
   </div>
 </template>
 
 <script>
   import Burger from './Burger'
+  import Sidebar from './Sidebar'
   export default {
     name: 'TheMenu',
-    components: { Burger }
+    components: { Sidebar, Burger },
+    data () {
+      return {
+        opened: true
+      }
+    },
+    methods: {
+      burgerClick (value) {
+        this.opened = value
+      }
+    }
   }
 </script>
 
@@ -17,10 +29,12 @@
     width: 100%;
     height: 50px;
     display: flex;
-    justify-content: flex-end; // todo: finish burger
+    justify-content: flex-end;
   }
 
   .burger {
+    top: 10px;
     right: 10px;
+    z-index: 5;
   }
 </style>
