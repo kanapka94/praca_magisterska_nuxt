@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <burger v-model="opened"/>
-    <sidebar :opened="opened"/>
+    <sidebar :opened="opened" @click="opened = false"/>
   </div>
 </template>
 

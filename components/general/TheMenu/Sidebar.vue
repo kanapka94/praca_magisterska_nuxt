@@ -1,5 +1,9 @@
 <template>
-  <div class="sidebar" :class="{ opened: openedMenu }">
+  <div
+    class="sidebar"
+    :class="{ opened: openedMenu }"
+    @click="$emit('click')"
+  >
     <links/>
   </div>
 </template>
