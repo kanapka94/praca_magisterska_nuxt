@@ -13,10 +13,10 @@ module.exports = {
       { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=Edge' },
-      { hid: 'og:title', property: 'og:title', content: 'List of drinks' },
+      { hid: 'og:title', property: 'og:title', content: 'Wielka lista przepisów na drinki' },
       { hid: 'og:url', property: 'og:url', content: 'https://otejporze.pl' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'otejporze.pl' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'Znajdź najlepsze drinki i przepisy na ich stworzenie!' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
