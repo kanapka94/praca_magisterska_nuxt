@@ -1,13 +1,54 @@
 <template>
-  <div class="page">Szklanki</div>
+  <div class="page">
+    <h1 class="title">
+      Lista rodzajów szklanek
+    </h1>
+    <p class="description">
+      Kliknij na nazwę szklanki, aby znaleźć drinki pasujące do danej szklanki
+    </p>
+    <ul class="ingredients">
+      <li
+        v-for="(ingredient, index) in ingredients"
+        :key="`ingredient_${index}`"
+        class="item"
+      >
+        <span @click="handleClick">
+          {{ ingredient.strGlass }}
+        </span>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
   export default {
-    name: 'PageGlasses'
+    name: 'PageGlasses',
+    async asyncData ({ app }) {
+      const response = await app.$service.getList.glasses()
+      return {
+        ingredients: response.drinks
+      }
+    }
   }
 </script>
 
 <style lang="scss" scoped>
+  .title {
+    @include font-primary(36px);
+    margin-bottom: 10px;
+  }
 
+  .description {
+    margin-bottom: 20px;
+    color: $gray-dark;
+  }
+
+  .item {
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: $pink;
+    }
+  }
 </style>

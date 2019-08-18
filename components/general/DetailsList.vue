@@ -26,7 +26,7 @@
 <style lang="scss" scoped>
   /deep/ .detail {
     &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
   }
 </style>

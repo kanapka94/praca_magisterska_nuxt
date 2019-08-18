@@ -17,6 +17,7 @@
     right: 0;
     bottom: 0;
     height: $footer-height;
+    margin-top: 30px;
     text-align: center;
   }
 </style>

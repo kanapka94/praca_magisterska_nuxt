@@ -31,6 +31,7 @@
 
   .title {
     margin-right: 15px;
+    margin-bottom: 5px;
     color: $violet;
   }
 
