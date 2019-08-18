@@ -1,6 +1,6 @@
 <template>
   <div class="burger" @click="handleClick">
-    <input type="checkbox" class="checkbox">
+    <input ref="checkbox" type="checkbox" class="checkbox">
     <span/>
     <span/>
     <span/>
@@ -10,15 +10,32 @@
 <script>
   export default {
     name: 'Burger',
+    props: {
+      value: {
+        type: Boolean,
+        default: false
+      }
+    },
     data () {
       return {
-        open: false
+        open: this.value
+      }
+    },
+    watch: {
+      value: {
+        immediate: true,
+        handler (value) {
+          this.open = value
+          if (this.$refs.checkbox) {
+            this.$refs.checkbox.checked = value
+          }
+        }
       }
     },
     methods: {
       handleClick () {
         this.open = !this.open
-        this.$emit('click', this.open)
+        this.$emit('input', this.open)
       }
     }
   }

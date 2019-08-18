@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <burger @click="burgerClick"/>
+    <burger v-model="opened"/>
     <sidebar :opened="opened"/>
   </div>
 </template>
@@ -13,12 +13,7 @@
     components: { Sidebar, Burger },
     data () {
       return {
-        opened: true
-      }
-    },
-    methods: {
-      burgerClick (value) {
-        this.opened = value
+        opened: false
       }
     }
   }
