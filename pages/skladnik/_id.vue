@@ -19,21 +19,34 @@
     <p class="type">
       {{ ingredient.strType || 'Brak typu' }}
     </p>
+    <p class="subheader">
+      Lista drinków zawierających ten składnik
+    </p>
+    <drinks-list :drinks="drinks"/>
   </div>
 </template>
 
 <script>
+  import DrinksList from '@/components/general/DrinksList'
   export default {
     name: 'PageIngredient',
+    components: { DrinksList },
     async asyncData ({ app, params, error }) {
-      const response = await app.$service.ingredients.getIngredientById(params.id)
+      let response = await app.$service.ingredients.getIngredientByName(params.id)
       if (response.ingredients === null) {
-        error({ status: 404, message: 'Nie znaleziono składnika!' })
+        response = await app.$service.ingredients.getIngredientById(params.id)
+        if (response.ingredients === null) {
+          error({ status: 404, message: 'Nie znaleziono składnika!' })
+        }
       }
       const ingredient = response.ingredients[0]
 
+      const filteredDrinks = await app.$service.filter.ingredients(ingredient.strIngredient)
+      const drinks = filteredDrinks.drinks
+
       return {
-        ingredient
+        ingredient,
+        drinks
       }
     }
   }
@@ -41,8 +54,8 @@
 
 <style lang="scss" scoped>
   .subheader {
-    @include font-primary(16px);
-    margin: 20px 0 10px;
+    @include font-primary(18px, $pink);
+    margin: 40px 0 20px;
   }
 
   .image {

@@ -11,7 +11,7 @@
         <details-list :details="details"/>
         <p class="ingredients-title">
           Składniki
-          <img src="/svg/ingredients.svg" alt="Składniki" class="icon">
+          <img src="/svg/ingredients.svg" alt="Składniki" class="title-icon">
         </p>
         <ul class="ingredients">
           <li
@@ -19,7 +19,9 @@
             :key="`ingredient_${index}`"
             class="item"
           >
-            - {{ ingredient }}
+            <nuxt-link :to="`/skladnik/${ingredient}`" class="link">
+              - {{ ingredient }}
+            </nuxt-link>
           </li>
         </ul>
       </div>
@@ -146,6 +148,17 @@
     .item {
       @include font-secondary(16px, $gray-dark);
       margin-top: 10px;
+      cursor: pointer;
+      transition: transform .3s;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    .link {
+      text-decoration: none;
+      color: inherit;
     }
   }
 </style>

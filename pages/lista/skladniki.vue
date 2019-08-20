@@ -13,9 +13,9 @@
         :key="`ingredient_${index}`"
         class="item"
       >
-        <span @click="handleClick(ingredient.strIngredient1)">
+        <nuxt-link :to="`/skladnik/${ingredient.strIngredient1}`" class="link">
           {{ ingredient.strIngredient1 }}
-        </span>
+        </nuxt-link>
       </li>
     </ul>
   </div>
@@ -28,12 +28,6 @@
       const response = await app.$service.getList.ingredients()
       return {
         ingredients: response.drinks
-      }
-    },
-    methods: {
-      async handleClick (ingredientName) {
-        const response = await this.$service.ingredients.getIngredientByName(ingredientName)
-        this.$router.push(`/skladnik/${response.ingredients[0].idIngredient}`)
       }
     }
   }
@@ -54,8 +48,13 @@
     margin-bottom: 10px;
     cursor: pointer;
 
-    &:hover {
-      color: $pink;
+    .link {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        color: $pink;
+      }
     }
   }
 </style>
