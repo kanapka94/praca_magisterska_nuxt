@@ -28,7 +28,7 @@
         </li>
         <li class="item">
           <link-component href="/lista/nasycenie">
-            Nasycenie alkolu
+            Nasycenie alkoholu
           </link-component>
         </li>
         <li class="item">

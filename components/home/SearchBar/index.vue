@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <form class="container" @submit.prevent="handleSubmit">
     <input
       v-model="text"
       type="text"
@@ -7,10 +7,10 @@
       :placeholder="placeholder"
       @input="handleInput"
     >
-    <button-component @click="handleClick">
+    <button-component type="submit">
       Szukaj
     </button-component>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -38,8 +38,8 @@
       handleInput () {
         this.$emit('input', this.text)
       },
-      handleClick () {
-        this.$emit('click')
+      handleSubmit () {
+        this.$emit('search')
       }
     }
   }

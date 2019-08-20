@@ -1,8 +1,8 @@
 <template>
   <div class="details">
     <detail-item
-      v-for="detail in details"
-      :key="detail.title"
+      v-for="(detail, index) in details"
+      :key="`detail_${index}`"
       :detail="detail"
     />
   </div>

@@ -9,6 +9,7 @@
       <search-bar
         v-model="form.text"
         placeholder="Wpisz nazwę..."
+        @search="handleSearch"
       />
     </section>
     <section class="lists">
@@ -62,6 +63,11 @@
       const response = await app.$service.drinks.getRandom()
       return {
         drink: response.drinks[0]
+      }
+    },
+    methods: {
+      handleSearch () {
+        console.log('submit')
       }
     }
   }

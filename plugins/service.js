@@ -12,7 +12,17 @@ const createService = axios => ({
     ingredients: payload => axios.$get(`/filter.php?i=${payload}`)
   },
   drinks: {
-    getRandom: () => axios.$get(`/random.php`)
+    getRandom: () => axios.$get(`/random.php`),
+    getDrinkById: payload => axios.$get(`/lookup.php?i=${payload}`),
+    getDrinkByName: payload => axios.$get(
+      `/search.php?s=${encodeURI(payload)}`
+    )
+  },
+  ingredients: {
+    getIngredientById: payload => axios.$get(`/lookup.php?iid=${payload}`),
+    getIngredientByName: payload => axios.$get(
+      `/search.php?i=${encodeURI(payload)}`
+    )
   }
 })
 
