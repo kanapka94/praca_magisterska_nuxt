@@ -2,6 +2,7 @@
   <div class="page">
     <h1 class="title">
       Lista rodzajów szklanek
+      <img src="/svg/glasses.svg" alt="Rodzaje szklanek" class="title-icon">
     </h1>
     <p class="description">
       Kliknij na nazwę szklanki, aby znaleźć drinki pasujące do danej szklanki

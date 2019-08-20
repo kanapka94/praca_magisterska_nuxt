@@ -9,6 +9,19 @@
           {{ drink.strDrink }}
         </h1>
         <details-list :details="details"/>
+        <p class="ingredients-title">
+          Składniki
+          <img src="/svg/ingredients.svg" alt="Składniki" class="icon">
+        </p>
+        <ul class="ingredients">
+          <li
+            v-for="(ingredient, index) in ingredients"
+            :key="`ingredient_${index}`"
+            class="item"
+          >
+            - {{ ingredient }}
+          </li>
+        </ul>
       </div>
       <div class="box">
         <img :src="drink.strDrinkThumb" :alt="drink.strDrink" class="image">
@@ -130,7 +143,24 @@
     }
   }
 
-  .ingredients {
+  .ingredients-title {
+    @include font-secondary(18px, $blue-dark);
+    margin-top: 20px;
+    font-weight: bold;
 
+    .image {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .ingredients {
+    margin-top: 20px;
+    font-weight: bold;
+
+    .item {
+      @include font-secondary(16px, $gray-dark);
+      margin-top: 10px;
+    }
   }
 </style>

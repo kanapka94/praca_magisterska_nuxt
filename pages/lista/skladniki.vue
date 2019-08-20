@@ -2,6 +2,7 @@
   <div class="page">
     <h1 class="title">
       Lista składników
+      <img src="/svg/ingredients.svg" alt="Składniki" class="title-icon">
     </h1>
     <p class="description">
       Kliknij na składnik, aby dowiedzieć się więcej na jego temat
@@ -12,7 +13,7 @@
         :key="`ingredient_${index}`"
         class="item"
       >
-        <span @click="handleClick">
+        <span @click="handleClick(ingredient.strIngredient1)">
           {{ ingredient.strIngredient1 }}
         </span>
       </li>
@@ -27,6 +28,12 @@
       const response = await app.$service.getList.ingredients()
       return {
         ingredients: response.drinks
+      }
+    },
+    methods: {
+      async handleClick (ingredientName) {
+        const response = await this.$service.ingredients.getIngredientByName(ingredientName)
+        this.$router.push(`/skladnik/${response.ingredients[0].idIngredient}`)
       }
     }
   }

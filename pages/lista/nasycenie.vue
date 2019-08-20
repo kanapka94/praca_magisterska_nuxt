@@ -2,6 +2,7 @@
   <div class="page">
     <h1 class="title">
       Lista kategorii drinków według zawartości alkoholu
+      <img src="/svg/magnificial.svg" alt="Nasycenie" class="title-icon">
     </h1>
     <p class="description">
       Kliknij na kategorię, aby wyszukać odpowiednie drinki

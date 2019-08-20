@@ -2,6 +2,7 @@
   <div class="page">
     <h1 class="title">
       Lista kategorii drinków
+      <img src="/svg/category.svg" alt="Kategorie" class="title-icon">
     </h1>
     <p class="description">
       Kliknij na kategorię, aby wyszukać drinki z danej kategorii
