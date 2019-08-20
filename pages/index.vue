@@ -12,6 +12,9 @@
         @search="handleSearch"
       />
     </section>
+    <p class="info">
+      Wersja językowa wyszukiwarki: język angielski
+    </p>
     <section class="lists">
       <p class="subtitle">Zobacz także <span class="focus">listy</span> filtrów</p>
       <link-component href="/lista/skladniki">
@@ -47,12 +50,12 @@
         },
         options: [
           {
-            name: 'Drinka',
+            name: 'Drinka 🍹',
             value: 'drink',
             group: 'searchType'
           },
           {
-            name: 'Składnika',
+            name: 'Składnika 💎',
             value: 'ingredient',
             group: 'searchType'
           }
@@ -92,6 +95,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .info {
+    @include font-secondary(12px);
+    text-align: center;
   }
 
   .title {

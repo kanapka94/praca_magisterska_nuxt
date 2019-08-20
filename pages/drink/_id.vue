@@ -81,21 +81,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .navigation {
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  .icon {
-    width: 48px;
-    height: 48px;
-    transition: all .3s cubic-bezier(0.77,0.2,0.05,1.0);
-
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-
   .container {
     width: 100%;
     display: flex;

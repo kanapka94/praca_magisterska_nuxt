@@ -15,7 +15,7 @@ html {
 body {
   min-height:100%;
   position:relative;
-  padding-bottom: $footer-height;
+  padding-bottom: $footer-height + 30px;
 }
 
 *,
@@ -37,4 +37,19 @@ body {
 .title-icon {
   width: 48px;
   height: 48px;
+}
+
+.navigation {
+  display: block;
+  margin-bottom: 20px;
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    transition: all .3s cubic-bezier(0.77,0.2,0.05,1.0);
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }
