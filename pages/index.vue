@@ -1,68 +1,115 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        praca_magisterska_nuxt
-      </h1>
-      <h2 class="subtitle">
-        My kickass Nuxt.js project
+  <div class="page">
+    <random-drink :drink="drink"/>
+    <section class="search">
+      <h2 class="title">
+        Wyszukaj informacje na temat drinka
+        <img src="/svg/magnificial.svg" alt="Drink" class="title-icon">
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
-    </div>
-  </section>
+      <search-bar
+        v-model="text"
+        placeholder="Wpisz nazwę drinka..."
+        @search="handleSearch"
+      />
+    </section>
+    <p class="info">
+      Wersja językowa wyszukiwarki: język angielski
+    </p>
+    <section class="lists">
+      <p class="subtitle">Zobacz także <span class="focus">listy</span> filtrów</p>
+      <link-component href="/lista/skladniki">
+        Składniki
+      </link-component>
+      <link-component href="/lista/szklanki">
+        Rodzaje szklanek
+      </link-component>
+      <link-component href="/lista/nasycenie">
+        Nasycenie alkoholu
+      </link-component>
+      <link-component href="/lista/kategorie">
+        Kategorie drinków
+      </link-component>
+    </section>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+  import SearchBar from '../components/home/SearchBar/index'
+  import LinkComponent from '../components/general/Link'
+  import RandomDrink from '../components/home/RandomDrink/index'
 
-export default {
-  components: {
-    Logo
+  export default {
+    name: 'PageIndex',
+    components: { RandomDrink, LinkComponent, SearchBar },
+    data () {
+      return {
+        text: ''
+      }
+    },
+    async asyncData ({ app }) {
+      const response = await app.$service.drinks.getRandom()
+      return {
+        drink: response.drinks[0]
+      }
+    },
+    methods: {
+      handleSearch () {
+        const query = {
+          wartosc: this.text,
+          kryterium: 'name'
+        }
+        this.$router.push({ path: '/wyszukaj', query })
+      }
+    }
   }
-}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss" scoped>
+  .page {
+    position: relative;
+  }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  .random-drink {
+    position: absolute;
+    top: 0;
+    right: 10px;
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+    @include tablet {
+      display: none;
+    }
+  }
 
-.links {
-  padding-top: 15px;
-}
+  .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info {
+    @include font-secondary(12px);
+    text-align: center;
+  }
+
+  .title {
+    @include font-primary(36px);
+    margin-bottom: 20px;
+  }
+
+  .lists {
+    margin-top: 60px;
+  }
+
+  .subtitle {
+    @include font-primary;
+    margin-bottom: 20px;
+  }
+
+  .focus {
+    color: $pink;
+  }
+
+  .link {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
 </style>
