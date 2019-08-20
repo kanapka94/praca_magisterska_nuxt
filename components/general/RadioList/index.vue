@@ -60,6 +60,7 @@
     display: flex;
     align-items: center;
     margin-right: 20px;
+    margin-bottom: 15px;
     cursor: pointer;
   }
 

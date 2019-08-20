@@ -13,9 +13,12 @@
         :key="`ingredient_${index}`"
         class="item"
       >
-        <span @click="handleClick">
+        <nuxt-link
+          :to="`/wyszukaj?wartosc=${ingredient.strCategory}&kryterium=categories`"
+          class="link"
+        >
           {{ ingredient.strCategory }}
-        </span>
+        </nuxt-link>
       </li>
     </ul>
   </div>
@@ -48,8 +51,13 @@
     margin-bottom: 10px;
     cursor: pointer;
 
-    &:hover {
-      color: $pink;
+    .link {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        color: $pink;
+      }
     }
   }
 </style>

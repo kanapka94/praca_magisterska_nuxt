@@ -7,7 +7,7 @@
       :placeholder="placeholder"
       @input="handleInput"
     >
-    <button-component type="submit">
+    <button-component type="submit" :loading="loading" dark-loader>
       Szukaj
     </button-component>
   </form>
@@ -32,6 +32,11 @@
     data () {
       return {
         text: this.value
+      }
+    },
+    computed: {
+      loading () {
+        return this.$store.state.loading
       }
     },
     methods: {

@@ -3,12 +3,12 @@
     <random-drink :drink="drink"/>
     <section class="search">
       <h2 class="title">
-        Wyszukaj informacje na temat
+        Wyszukaj informacje na temat drinka
+        <img src="/svg/magnificial.svg" alt="Drink" class="title-icon">
       </h2>
-      <radio-list v-model="form.option" :list="options"/>
       <search-bar
-        v-model="form.text"
-        placeholder="Wpisz nazwę..."
+        v-model="text"
+        placeholder="Wpisz nazwę drinka..."
         @search="handleSearch"
       />
     </section>
@@ -35,31 +35,15 @@
 
 <script>
   import SearchBar from '../components/home/SearchBar/index'
-  import RadioList from '../components/general/RadioList/index'
   import LinkComponent from '../components/general/Link'
   import RandomDrink from '../components/home/RandomDrink/index'
 
   export default {
     name: 'PageIndex',
-    components: { RandomDrink, LinkComponent, RadioList, SearchBar },
+    components: { RandomDrink, LinkComponent, SearchBar },
     data () {
       return {
-        form: {
-          text: '',
-          option: ''
-        },
-        options: [
-          {
-            name: 'Drinka 🍹',
-            value: 'drink',
-            group: 'searchType'
-          },
-          {
-            name: 'Składnika 💎',
-            value: 'ingredient',
-            group: 'searchType'
-          }
-        ]
+        text: ''
       }
     },
     async asyncData ({ app }) {
@@ -70,7 +54,11 @@
     },
     methods: {
       handleSearch () {
-        console.log('submit')
+        const query = {
+          wartosc: this.text,
+          kryterium: 'name'
+        }
+        this.$router.push({ path: '/wyszukaj', query })
       }
     }
   }
