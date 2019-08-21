@@ -6,6 +6,7 @@
         Search for information about a drink
         <img src="/svg/magnificial.svg" alt="magnifying glass" class="title-icon">
       </h2>
+      <p class="subtitle">Get recipes for best cocktails</p>
       <search-bar
         v-model="text"
         placeholder="Type drink name..."
