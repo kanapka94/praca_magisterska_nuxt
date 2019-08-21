@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <h3 class="title">Wyniki wyszukiwania:</h3>
+    <h3 class="title">Search results:</h3>
     <drinks-list :drinks="drinks"/>
   </div>
 </template>

@@ -1,11 +1,11 @@
 <template>
   <div class="page">
     <h1 class="title">
-      Lista kategorii drinków według zawartości alkoholu
-      <img src="/svg/magnificial.svg" alt="Nasycenie" class="title-icon">
+      Cocktail categories list
+      <img src="/svg/category.svg" alt="Categories" class="title-icon">
     </h1>
     <p class="description">
-      Kliknij na kategorię, aby wyszukać odpowiednie drinki
+      Click on a category to search for drinks from that category
     </p>
     <ul class="ingredients">
       <li
@@ -14,10 +14,10 @@
         class="item"
       >
         <nuxt-link
-          :to="`/wyszukaj?wartosc=${ingredient.strAlcoholic}&kryterium=alcohol`"
+          :to="`/search?query=${ingredient.strCategory}&criteria=categories`"
           class="link"
         >
-          {{ ingredient.strAlcoholic }}
+          {{ ingredient.strCategory }}
         </nuxt-link>
       </li>
     </ul>
@@ -26,9 +26,9 @@
 
 <script>
   export default {
-    name: 'PageSaturation',
+    name: 'PageCategories',
     async asyncData ({ app }) {
-      const response = await app.$service.getList.alcohol()
+      const response = await app.$service.getList.categories()
       return {
         ingredients: response.drinks
       }

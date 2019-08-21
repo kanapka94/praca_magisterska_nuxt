@@ -1,11 +1,11 @@
 <template>
   <div class="page">
     <h1 class="title">
-      Lista rodzajów szklanek
-      <img src="/svg/glasses.svg" alt="Rodzaje szklanek" class="title-icon">
+      List of types of glasses
+      <img src="/svg/glasses.svg" alt="Glasses" class="title-icon">
     </h1>
     <p class="description">
-      Kliknij na nazwę szklanki, aby znaleźć drinki pasujące do danej szklanki
+      Click on the name of the glass to find drinks that match the glass
     </p>
     <ul class="ingredients">
       <li
@@ -14,7 +14,7 @@
         class="item"
       >
         <nuxt-link
-          :to="`/wyszukaj?wartosc=${ingredient.strGlass}&kryterium=glasses`"
+          :to="`/search?query=${ingredient.strGlass}&criteria=glasses`"
           class="link"
         >
           {{ ingredient.strGlass }}

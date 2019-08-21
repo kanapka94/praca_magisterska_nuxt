@@ -7,7 +7,7 @@
       {{ error.message }}
     </p>
     <nuxt-link to="/" class="link">
-      Powrót na stronę główną
+      Return to home page
     </nuxt-link>
   </div>
 </template>

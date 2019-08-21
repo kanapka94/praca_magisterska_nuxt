@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" alt="Wczytywanie" class="img">
+  <img :src="src" alt="Loading" class="img">
 </template>
 
 <script>

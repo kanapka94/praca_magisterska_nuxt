@@ -1,8 +1,11 @@
 const getIngredients = drink => {
   const ingredients = []
   for (let i = 0; i < 10; i++) {
-    const ingredient = drink['strIngredient' + i]
-    if (ingredient) ingredients.push(ingredient)
+    const ingredient = {
+      name: drink['strIngredient' + i],
+      measure: drink['strMeasure' + i]
+    }
+    if (ingredient.name) ingredients.push(ingredient)
   }
   return ingredients
 }

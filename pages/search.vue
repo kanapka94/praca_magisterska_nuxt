@@ -1,13 +1,9 @@
 <template>
   <div class="page">
     <h1 class="title">
-      Znalezionych
+      Drinks found
       <span class="number">{{ drinksNumber }}</span>
     </h1>
-    <!--    <p class="subtitle">-->
-    <!--      Wybierz kryterium wyszukiwania-->
-    <!--    </p>-->
-    <!--    <radio-list v-model="form.criteria" :list="searchCriteraOptions"/>-->
     <search-bar
       v-model="form.text"
       :placeholder="placeholder"
@@ -19,17 +15,16 @@
 
 <script>
   import { mapState } from 'vuex'
-  // import RadioList from '../components/general/RadioList/index'
   import SearchBar from '@/components/home/SearchBar/index'
   import SearchResults from '@/components/search/SearchResults/index'
 
   const PLACEHOLDERS = {
-    name: 'Wpisz nazwę drinka',
-    id: 'Wpisz id drinka',
-    ingredient: 'Wpisz nazwę składnika',
-    glass: 'Wpisz nazwę szklanki',
-    alcohol: 'Wpisz nazwę nasycenia alkoholu',
-    category: 'Wpisz nazwę kategorii'
+    name: 'Type name of drink',
+    id: 'Type drink id',
+    ingredient: 'Type name of ingredient',
+    glass: 'Type name of glass',
+    alcohol: 'Type name of the alcohol saturation',
+    category: 'Type category name'
   }
 
   export default {
@@ -97,13 +92,13 @@
     methods: {
       async handleSearch () {
         const query = {
-          wartosc: this.form.text,
-          kryterium: this.form.criteria
+          query: this.form.text,
+          criteria: this.form.criteria
         }
-        this.$router.replace({ path: '/wyszukaj', query })
+        this.$router.replace({ path: '/search', query })
         await this.$store.dispatch('fetchDrinks', {
-          value: query.wartosc,
-          criteria: query.kryterium
+          value: query.query,
+          criteria: query.criteria
         })
       }
     }

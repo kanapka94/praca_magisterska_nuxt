@@ -3,31 +3,31 @@
     <random-drink :drink="drink"/>
     <section class="search">
       <h2 class="title">
-        Wyszukaj informacje na temat drinka
-        <img src="/svg/magnificial.svg" alt="Drink" class="title-icon">
+        Search for information about a drink
+        <img src="/svg/magnificial.svg" alt="magnifying glass" class="title-icon">
       </h2>
       <search-bar
         v-model="text"
-        placeholder="Wpisz nazwę drinka..."
+        placeholder="Type drink name..."
         @search="handleSearch"
       />
     </section>
     <p class="info">
-      Wersja językowa wyszukiwarki: język angielski
+      Language version of the search engine: English
     </p>
     <section class="lists">
-      <p class="subtitle">Zobacz także <span class="focus">listy</span> filtrów</p>
-      <link-component href="/lista/skladniki">
-        Składniki
+      <p class="subtitle">See also <span class="focus">filter</span> lists</p>
+      <link-component href="/lists/ingredients">
+        Ingredients
       </link-component>
-      <link-component href="/lista/szklanki">
-        Rodzaje szklanek
+      <link-component href="/lists/glasses">
+        Types of glasses
       </link-component>
-      <link-component href="/lista/nasycenie">
-        Nasycenie alkoholu
+      <link-component href="/lists/alcohol">
+        Alcohol
       </link-component>
-      <link-component href="/lista/kategorie">
-        Kategorie drinków
+      <link-component href="/lists/categories">
+        Cocktails categories
       </link-component>
     </section>
   </div>
@@ -55,10 +55,10 @@
     methods: {
       handleSearch () {
         const query = {
-          wartosc: this.text,
-          kryterium: 'name'
+          query: this.text,
+          criteria: 'name'
         }
-        this.$router.push({ path: '/wyszukaj', query })
+        this.$router.push({ path: '/search', query })
       }
     }
   }

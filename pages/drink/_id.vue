@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <nuxt-link to="/" class="navigation">
-      <img src="/svg/arrow_left.svg" alt="Powrót do strony głównej" class="icon">
+      <img src="/svg/arrow_left.svg" alt="Return to home page" class="icon">
     </nuxt-link>
     <div class="container">
       <div class="box">
@@ -10,8 +10,8 @@
         </h1>
         <details-list :details="details"/>
         <p class="ingredients-title">
-          Składniki
-          <img src="/svg/ingredients.svg" alt="Składniki" class="title-icon">
+          Ingredients
+          <img src="/svg/ingredients.svg" alt="Ingredients" class="title-icon">
         </p>
         <ul class="ingredients">
           <li
@@ -19,8 +19,9 @@
             :key="`ingredient_${index}`"
             class="item"
           >
-            <nuxt-link :to="`/skladnik/${ingredient}`" class="link">
-              - {{ ingredient }}
+            <nuxt-link :to="`/ingredient/${ingredient}`" class="link">
+              {{ ingredient.name }}
+              <span class="measure">{{ ingredient.measure }}</span>
             </nuxt-link>
           </li>
         </ul>
@@ -43,23 +44,23 @@
       details () {
         return [
           {
-            title: 'Tagi',
+            title: 'Tags',
             description: this.drink.strTags
           },
           {
-            title: 'Kategoria',
+            title: 'Category',
             description: this.drink.strCategory
           },
           {
-            title: 'Nasycenie alkoholu',
+            title: 'Alcohol',
             description: this.drink.strAlcoholic
           },
           {
-            title: 'Rodzj szklanki',
+            title: 'Glass',
             description: this.drink.strGlass
           },
           {
-            title: 'Instrukcje przygotowania',
+            title: 'Recipe',
             description: this.drink.strInstructions
           }
         ]
@@ -71,7 +72,7 @@
     async asyncData ({ app, error, params }) {
       const response = await app.$service.drinks.getDrinkById(params.id)
       if (response.drinks === null) {
-        error({ status: 404, message: 'Nie znaleziono drinka!' })
+        error({ status: 404, message: 'Cocktail not found!' })
       }
       const drink = response.drinks[0]
 
@@ -159,6 +160,10 @@
     .link {
       text-decoration: none;
       color: inherit;
+    }
+
+    .measure {
+      color: $pink;
     }
   }
 </style>

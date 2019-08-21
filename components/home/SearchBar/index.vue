@@ -8,7 +8,7 @@
       @input="handleInput"
     >
     <button-component type="submit" :loading="loading" dark-loader>
-      Szukaj
+      Search
     </button-component>
   </form>
 </template>

@@ -2,7 +2,7 @@
   export default {
     name: 'PageIndexList',
     fetch ({ redirect }) {
-      redirect(301, '/lista/skladniki')
+      redirect(301, '/lists/ingredients')
     }
   }
 </script>
