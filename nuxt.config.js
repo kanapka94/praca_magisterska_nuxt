@@ -16,7 +16,7 @@ module.exports = {
       { hid: 'og:description', property: 'og:description', content: 'Find the best cocktails and recipes for their creation. Have fun! Funny drinks!' },
       { hid: 'og:url', property: 'og:url', content: 'https://otejporze.pl' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'FunnyDrinks' },
-      { hid: 'og:image', property: 'og:image', content: '/img/og_image.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://otejporze.pl/img/og_image.png' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'description', name: 'description', content: 'Find the best cocktails and recipes for their creation. Have fun! Funny drinks!' }
     ],
