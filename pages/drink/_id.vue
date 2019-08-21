@@ -20,7 +20,8 @@
             class="item"
           >
             <nuxt-link :to="`/ingredient/${ingredient}`" class="link">
-              - {{ ingredient }}
+              {{ ingredient.name }}
+              <span class="measure">{{ ingredient.measure }}</span>
             </nuxt-link>
           </li>
         </ul>
@@ -159,6 +160,10 @@
     .link {
       text-decoration: none;
       color: inherit;
+    }
+
+    .measure {
+      color: $pink;
     }
   }
 </style>
