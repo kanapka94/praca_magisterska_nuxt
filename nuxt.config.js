@@ -11,6 +11,7 @@ module.exports = {
       { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=Edge' },
+      { name: 'google-site-verification', content: '41e-mGSkO6NBcSo7yRWjoPqMFIfTlVrvrcKcE32NkrM' },
       { hid: 'og:title', property: 'og:title', content: 'Great list of drink recipes - FunnyDrinks' },
       { hid: 'og:description', property: 'og:description', content: 'Find the best cocktails and recipes for their creation. Have fun! Funny drinks!' },
       { hid: 'og:url', property: 'og:url', content: 'https://otejporze.pl' },
