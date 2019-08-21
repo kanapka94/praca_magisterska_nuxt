@@ -84,7 +84,9 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'https://www.thecocktaildb.com/api/json/v2/8673533'
+    baseURL: 'https://www.thecocktaildb.com/api/json/v2/8673533',
+    proxyHeaders: false,
+    credentials: false
   },
 
   /*
