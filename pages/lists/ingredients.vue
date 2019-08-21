@@ -1,11 +1,11 @@
 <template>
   <div class="page">
     <h1 class="title">
-      Lista składników
-      <img src="/svg/ingredients.svg" alt="Składniki" class="title-icon">
+      List of ingredients
+      <img src="/svg/ingredients.svg" alt="Ingredients" class="title-icon">
     </h1>
     <p class="description">
-      Kliknij na składnik, aby dowiedzieć się więcej na jego temat
+      Click on an ingredient to learn more about it
     </p>
     <ul class="ingredients">
       <li
@@ -13,7 +13,7 @@
         :key="`ingredient_${index}`"
         class="item"
       >
-        <nuxt-link :to="`/skladnik/${ingredient.strIngredient1}`" class="link">
+        <nuxt-link :to="`/ingredient/${ingredient.strIngredient1}`" class="link">
           {{ ingredient.strIngredient1 }}
         </nuxt-link>
       </li>

@@ -1,7 +1,7 @@
 <template>
   <div class="page">
-    <nuxt-link to="/lista/skladniki" class="navigation">
-      <img src="/svg/arrow_left.svg" alt="Powrót do strony głównej" class="icon">
+    <nuxt-link to="/lists/ingredients" class="navigation">
+      <img src="/svg/arrow_left.svg" alt="Return to ingredients list" class="icon">
     </nuxt-link>
     <img
       :src="`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient}-Medium.png`"
@@ -11,16 +11,16 @@
     <p class="title">
       {{ ingredient.strIngredient }}
     </p>
-    <p class="subheader">Opis</p>
+    <p class="subheader">Description</p>
     <p class="description">
-      {{ ingredient.strDescription || 'Brak opisu' }}
+      {{ ingredient.strDescription || 'No description' }}
     </p>
-    <p class="subheader">Typ składnika</p>
+    <p class="subheader">Cocktail type</p>
     <p class="type">
-      {{ ingredient.strType || 'Brak typu' }}
+      {{ ingredient.strType || 'No type' }}
     </p>
     <p class="subheader">
-      Lista drinków zawierających ten składnik
+      A list of drinks containing this ingredient
     </p>
     <drinks-list :drinks="drinks"/>
   </div>
@@ -36,7 +36,7 @@
       if (response.ingredients === null) {
         response = await app.$service.ingredients.getIngredientById(params.id)
         if (response.ingredients === null) {
-          error({ status: 404, message: 'Nie znaleziono składnika!' })
+          error({ status: 404, message: 'Ingredient not found!' })
         }
       }
       const ingredient = response.ingredients[0]
