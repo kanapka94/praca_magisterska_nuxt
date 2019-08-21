@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    SGGW 2019r.
+    2019r.
   </footer>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <nuxt-link to="/" class="header-link">
-      <img src="/svg/logo.svg" alt="Praca magisterska" class="logo">
+      <img src="/svg/logo.svg" alt="Page logo" class="logo">
     </nuxt-link>
     <burger v-model="opened"/>
     <sidebar :opened="opened" @click="opened = false"/>

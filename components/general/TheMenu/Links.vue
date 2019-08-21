@@ -1,39 +1,39 @@
 <template>
   <nav class="wrapper">
     <div class="links">
-      <p class="title">Ogólne</p>
+      <p class="title">General</p>
       <ul>
         <li class="item">
           <link-component href="/">
-            Strona Główna
+            Home Page
           </link-component>
         </li>
         <li class="item">
-          <link-component href="/wyszukaj">
-            Szukaj 🍹
+          <link-component href="/search">
+            Search 🍹
           </link-component>
         </li>
       </ul>
-      <p class="title">Listy</p>
+      <p class="title">Lists</p>
       <ul>
         <li class="item">
-          <link-component href="/lista/skladniki">
-            Składniki
+          <link-component href="/lists/ingredients">
+            Ingredients
           </link-component>
         </li>
         <li class="item">
-          <link-component href="/lista/szklanki">
-            Rodzaje szklanek
+          <link-component href="/lists/glasses">
+            Glasses
           </link-component>
         </li>
         <li class="item">
-          <link-component href="/lista/nasycenie">
-            Nasycenie alkoholu
+          <link-component href="/lists/alcohol">
+            Alcohol
           </link-component>
         </li>
         <li class="item">
-          <link-component href="/lista/kategorie">
-            Kategorie drinków
+          <link-component href="/lists/categories">
+            Categories
           </link-component>
         </li>
       </ul>
