@@ -5,7 +5,8 @@
       <img src="/svg/category.svg" alt="Categories" class="title-icon">
     </h1>
     <p class="description">
-      Click on a category to search for drinks from that category
+      Discover your tastes and choose drinks from the categories best suited to you!
+      <br>Click on a category to search for drinks from that category.
     </p>
     <ul class="ingredients">
       <li
@@ -27,6 +28,19 @@
 <script>
   export default {
     name: 'PageCategories',
+    head () {
+      return {
+        title: 'Cocktails categories - FunnyDrinks',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Discover your tastes and choose drinks from the categories best suited to you!' },
+          { hid: 'og:title', property: 'og:title', content: 'Cocktails categories - FunnyDrinks' },
+          { hid: 'og:description', property: 'og:description', content: 'Discover your tastes and choose drinks from the categories best suited to you!' }
+        ],
+        link: [
+          { rel: 'canonical', href: 'https://otejporze.pl/lists/categories' }
+        ]
+      }
+    },
     async asyncData ({ app }) {
       const response = await app.$service.getList.categories()
       return {

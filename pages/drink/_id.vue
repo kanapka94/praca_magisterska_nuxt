@@ -39,6 +39,16 @@
 
   export default {
     name: 'PageDrink',
+    head () {
+      return {
+        title: `Drink Details - ${this.drink.strDrink} - FunnyDrinks`,
+        meta: [
+          { hid: 'description', name: 'description', content: 'Find out what your drink consists of, how to prepare it and how it presents!' },
+          { hid: 'og:title', property: 'og:title', content: `Drink Details - ${this.drink.strDrink} - FunnyDrinks` },
+          { hid: 'og:description', property: 'og:description', content: 'Find out what your drink consists of, how to prepare it and how it presents!' }
+        ]
+      }
+    },
     components: { DetailsList },
     computed: {
       details () {

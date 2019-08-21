@@ -24,6 +24,19 @@
 <script>
   export default {
     name: 'PageIngredients',
+    head () {
+      return {
+        title: 'Cocktails ingredients - FunnyDrinks',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Get recipes for great, light and tasty cocktails. With the help of these ingredients, you can prepare cocktails that are perfect for parties or at home.' },
+          { hid: 'og:title', property: 'og:title', content: 'Cocktails ingredients - FunnyDrinks' },
+          { hid: 'og:description', property: 'og:description', content: 'Get recipes for great, light and tasty cocktails. With the help of these ingredients, you can prepare cocktails that are perfect for parties or at home.' }
+        ],
+        link: [
+          { rel: 'canonical', href: 'https://otejporze.pl/lists/ingredients' }
+        ]
+      }
+    },
     async asyncData ({ app }) {
       const response = await app.$service.getList.ingredients()
       return {

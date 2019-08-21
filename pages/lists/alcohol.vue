@@ -5,7 +5,8 @@
       <img src="/svg/magnificial.svg" alt="Magnifying glass" class="title-icon">
     </h1>
     <p class="description">
-      Click on a category to find suitable drinks
+      Choose the perfect alcohol saturation in your drink and discover the list of great cocktails!
+      <br>Click on a category to find suitable drinks
     </p>
     <ul class="ingredients">
       <li
@@ -27,6 +28,19 @@
 <script>
   export default {
     name: 'PageSaturation',
+    head () {
+      return {
+        title: 'Cocktails alcohol saturation - FunnyDrinks',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Choose the perfect alcohol saturation in your drink and discover the list of great cocktails!' },
+          { hid: 'og:title', property: 'og:title', content: 'Cocktails alcohol saturation - FunnyDrinks' },
+          { hid: 'og:description', property: 'og:description', content: 'Choose the perfect alcohol saturation in your drink and discover the list of great cocktails!' }
+        ],
+        link: [
+          { rel: 'canonical', href: 'https://otejporze.pl/lists/alcohol' }
+        ]
+      }
+    },
     async asyncData ({ app }) {
       const response = await app.$service.getList.alcohol()
       return {

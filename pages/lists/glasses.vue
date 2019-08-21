@@ -5,7 +5,7 @@
       <img src="/svg/glasses.svg" alt="Glasses" class="title-icon">
     </h1>
     <p class="description">
-      Click on the name of the glass to find drinks that match the glass
+      Click on the name of the glass to find drinks that match the glass. Choose the perfect cocktail for your glass and enjoy a beautiful-looking drink!
     </p>
     <ul class="ingredients">
       <li
@@ -27,6 +27,19 @@
 <script>
   export default {
     name: 'PageGlasses',
+    head () {
+      return {
+        title: 'Cocktails glasses - FunnyDrinks',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Choose the perfect cocktail for your glass and enjoy a beautiful-looking drink!' },
+          { hid: 'og:title', property: 'og:title', content: 'Cocktails glasses - FunnyDrinks' },
+          { hid: 'og:description', property: 'og:description', content: 'Choose the perfect cocktail for your glass and enjoy a beautiful-looking drink!' }
+        ],
+        link: [
+          { rel: 'canonical', href: 'https://otejporze.pl/lists/glasses' }
+        ]
+      }
+    },
     async asyncData ({ app }) {
       const response = await app.$service.getList.glasses()
       return {

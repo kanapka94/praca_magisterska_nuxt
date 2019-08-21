@@ -30,6 +30,16 @@
   import DrinksList from '@/components/general/DrinksList'
   export default {
     name: 'PageIngredient',
+    head () {
+      return {
+        title: `Ingredient Details - ${this.ingredient.strIngredient} - FunnyDrinks`,
+        meta: [
+          { hid: 'description', name: 'description', content: 'Read the information about the ingredient and select the most interesting ones to include in your drinks with great accuracy!' },
+          { hid: 'og:title', property: 'og:title', content: `Ingredient Details - ${this.ingredient.strIngredient} - FunnyDrinks` },
+          { hid: 'og:description', property: 'og:description', content: 'Read the information about the ingredient and select the most interesting ones to include in your drinks with great accuracy!' }
+        ]
+      }
+    },
     components: { DrinksList },
     async asyncData ({ app, params, error }) {
       let response = await app.$service.ingredients.getIngredientByName(params.id)
