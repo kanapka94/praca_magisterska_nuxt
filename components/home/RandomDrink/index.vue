@@ -1,6 +1,11 @@
 <template>
   <div class="random-drink">
-    <div class="title">Random recipe</div>
+    <h3 class="title">
+      <span>Random recipe</span>
+      <button @click="$emit('reload')" class="button">
+        <img src="/svg/reload.svg" alt="Reload" class="icon">
+      </button>
+    </h3>
     <nuxt-link :to="`/drink/${drink.idDrink}`">
       <img :src="drink.strDrinkThumb" alt="" class="image">
     </nuxt-link>
@@ -65,6 +70,25 @@
 
   .title {
     @include font-primary;
+    display: flex;
+  }
+
+  .button {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+
+    &:hover {
+      .icon {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .icon {
+      width: inherit;
+      height: inherit;
+      transition: transform .6s cubic-bezier(0.77,0.2,0.05,1.0);;
+    }
   }
 
   .image {

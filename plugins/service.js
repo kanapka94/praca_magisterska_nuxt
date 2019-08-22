@@ -1,9 +1,9 @@
 const createService = axios => ({
   getList: {
-    alcohol: () => axios.$get(`/list.php?a=list`),
-    categories: () => axios.$get(`/list.php?c=list`),
-    glasses: () => axios.$get(`/list.php?g=list`),
-    ingredients: () => axios.$get(`/list.php?i=list`)
+    alcohol: () => axios.$get(`/lists/alcohol`),
+    categories: () => axios.$get(`/lists/categories`),
+    glasses: () => axios.$get(`/lists/glasses`),
+    ingredients: () => axios.$get(`/lists/ingredients`)
   },
   filter: {
     alcohol: payload => axios.$get(`/filter.php?a=${payload}`),
@@ -12,7 +12,7 @@ const createService = axios => ({
     ingredients: payload => axios.$get(`/filter.php?i=${payload}`)
   },
   drinks: {
-    getRandom: () => axios.$get(`/random.php`),
+    getRandom: () => axios.$get(`/random`),
     getDrinkById: payload => axios.$get(`/lookup.php?i=${payload}`),
     getDrinkByName: payload => axios.$get(
       `/search.php?s=${encodeURI(payload)}`

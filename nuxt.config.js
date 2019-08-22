@@ -58,7 +58,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/service',
-    '~/plugins/axios'
+    '~/plugins/axios' // todo: wywalić ten nagłówek, bo to chyba przez niego nie łączy. Sprawdzić fetcha zamiast axiosa
   ],
 
   /*
@@ -85,7 +85,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'https://www.thecocktaildb.com/api/json/v2/8673533',
+    baseURL: 'http://localhost:3000/api',
     credentials: false
   },
 
@@ -107,5 +107,6 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  serverMiddleware: ['~/api/index.js']
 }

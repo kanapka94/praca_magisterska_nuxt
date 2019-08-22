@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <random-drink :drink="drink"/>
+    <random-drink :drink="drink" @reload="getRandom"/>
     <section class="search">
       <h2 class="title">
         Search for information about a drink
@@ -18,6 +18,7 @@
     </p>
     <section class="lists">
       <p class="subtitle">See also <span class="focus">filter</span> lists</p>
+      <pre>{{ TEST }}</pre>
       <link-component href="/lists/ingredients">
         Ingredients
       </link-component>
@@ -44,7 +45,8 @@
     components: { RandomDrink, LinkComponent, SearchBar },
     data () {
       return {
-        text: ''
+        text: '',
+        TEST: null
       }
     },
     async asyncData ({ app }) {
@@ -60,6 +62,10 @@
           criteria: 'name'
         }
         this.$router.push({ path: '/search', query })
+      },
+      async getRandom () {
+        const response = await this.$service.drinks.getRandom()
+        this.drink = response.drinks[0]
       }
     }
   }
