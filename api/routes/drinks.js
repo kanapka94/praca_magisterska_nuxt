@@ -3,13 +3,13 @@ import axios from '../config'
 
 const router = Router()
 
-router.get('/id/:id', async (req, res, next) => {
+router.get('/id/:id*', async (req, res, next) => {
   const payload = req.sanitize(req.params.id)
   const drink = await axios.get(`/lookup.php?i=${payload}`)
   res.json(drink.data)
 })
 
-router.get('/:name', async (req, res, next) => {
+router.get('/:name*', async (req, res, next) => {
   const payload = req.sanitize(req.params.name)
   const drink = await axios.get(`/search.php?s=${payload}`)
   res.json(drink.data)
