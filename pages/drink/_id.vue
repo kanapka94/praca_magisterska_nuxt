@@ -10,7 +10,7 @@
         </h1>
         <details-list :details="details"/>
         <p class="ingredients-title">
-          Ingredients
+          {{ drink.strDrink }} ingredients
           <img src="/svg/ingredients.svg" alt="Ingredients" class="title-icon">
         </p>
         <ul class="ingredients">
@@ -19,7 +19,7 @@
             :key="`ingredient_${index}`"
             class="item"
           >
-            <nuxt-link :to="`/ingredient/${ingredient}`" class="link">
+            <nuxt-link :to="`/ingredient/${ingredient.name}`" class="link">
               {{ ingredient.name }}
               <span class="measure">{{ ingredient.measure }}</span>
             </nuxt-link>

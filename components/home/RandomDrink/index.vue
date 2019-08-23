@@ -2,7 +2,7 @@
   <div class="random-drink">
     <h3 class="title">
       <span>Random recipe</span>
-      <button @click="$emit('reload')" class="button">
+      <button class="button" @click="$emit('reload')">
         <img src="/svg/reload.svg" alt="Reload" class="icon">
       </button>
     </h3>
@@ -11,7 +11,7 @@
     </nuxt-link>
     <details-list :details="details"/>
     <p class="ingredients-title">
-      Ingredients
+      {{ drink.strDrink }} ingredients
       <img src="/svg/ingredients.svg" alt="Ingredients" class="title-icon">
     </p>
     <ul class="ingredients">
@@ -20,7 +20,7 @@
         :key="`ingredient_${index}`"
         class="item"
       >
-        <nuxt-link :to="`/ingredient/${ingredient}`" class="link">
+        <nuxt-link :to="`/ingredient/${ingredient.name}`" class="link">
           {{ ingredient.name }}
           <span class="measure">{{ ingredient.measure }}</span>
         </nuxt-link>

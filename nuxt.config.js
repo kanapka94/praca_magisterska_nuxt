@@ -58,7 +58,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/service',
-    '~/plugins/axios' // todo: wywalić ten nagłówek, bo to chyba przez niego nie łączy. Sprawdzić fetcha zamiast axiosa
+    '~/plugins/axios'
   ],
 
   /*

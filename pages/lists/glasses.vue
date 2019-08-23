@@ -57,6 +57,7 @@
 
   .description {
     margin-bottom: 20px;
+    line-height: 20px;
     color: $gray-dark;
   }
 

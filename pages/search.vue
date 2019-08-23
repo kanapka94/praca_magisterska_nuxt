@@ -93,8 +93,8 @@
     },
     async asyncData ({ query, store }) {
       const payload = {
-        value: query.wartosc,
-        criteria: query.kryterium
+        value: query.query,
+        criteria: query.criteria
       }
       await store.dispatch('fetchDrinks', payload)
       store.commit('SET_LOADING', false)

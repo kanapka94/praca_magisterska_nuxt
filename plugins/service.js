@@ -6,22 +6,22 @@ const createService = axios => ({
     ingredients: () => axios.$get(`/lists/ingredients`)
   },
   filter: {
-    alcohol: payload => axios.$get(`/filter.php?a=${payload}`),
-    categories: payload => axios.$get(`/filter.php?c=${payload}`),
-    glasses: payload => axios.$get(`/filter.php?g=${payload}`),
-    ingredients: payload => axios.$get(`/filter.php?i=${payload}`)
+    alcohol: payload => axios.$get(`/filters/alcohol/${payload}`),
+    categories: payload => axios.$get(`/filters/categories/${payload}`),
+    glasses: payload => axios.$get(`/filters/glasses/${payload}`),
+    ingredients: payload => axios.$get(`/filters/ingredients/${payload}`)
   },
   drinks: {
     getRandom: () => axios.$get(`/random`),
-    getDrinkById: payload => axios.$get(`/lookup.php?i=${payload}`),
+    getDrinkById: payload => axios.$get(`/drinks/id/${payload}`),
     getDrinkByName: payload => axios.$get(
-      `/search.php?s=${encodeURI(payload)}`
+      `/drinks/${encodeURI(payload)}`
     )
   },
   ingredients: {
-    getIngredientById: payload => axios.$get(`/lookup.php?iid=${payload}`),
+    getIngredientById: payload => axios.$get(`/ingredients/id/${payload}`),
     getIngredientByName: payload => axios.$get(
-      `/search.php?i=${encodeURI(payload)}`
+      `/ingredients/${encodeURI(payload)}`
     )
   }
 })
