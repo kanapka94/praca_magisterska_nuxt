@@ -68,7 +68,15 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-146400602-1'
+    }],
+    ['@nuxtjs/google-tag-manager', {
+      id: 'GTM-PQFRB5D',
+      layer: 'dataLayer',
+      pageTracking: true
+    }]
   ],
   /*
   ** Style resources module configuration
