@@ -85,7 +85,9 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://localhost:3000/api',
+    baseURL: process.env.NODE_ENV === 'production'
+      ? 'https://otejporze.pl/api'
+      : 'http://localhost:3000/api',
     credentials: false
   },
 
