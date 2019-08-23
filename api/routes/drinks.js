@@ -11,7 +11,6 @@ router.get('/id/:id', async (req, res, next) => {
 
 router.get('/:name', async (req, res, next) => {
   const payload = req.sanitize(req.params.name)
-  console.log('payload', payload)
   const drink = await axios.get(`/search.php?s=${payload}`)
   res.json(drink.data)
 })
