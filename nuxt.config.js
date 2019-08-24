@@ -16,12 +16,12 @@ module.exports = {
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=Edge' },
       { name: 'google-site-verification', content: '41e-mGSkO6NBcSo7yRWjoPqMFIfTlVrvrcKcE32NkrM' },
       { hid: 'og:title', property: 'og:title', content: 'Great list of drink recipes - FunnyDrinks' },
-      { hid: 'og:description', property: 'og:description', content: 'Find the best cocktails and recipes for their creation. Have fun! Funny drinks!' },
+      { hid: 'og:description', property: 'og:description', content: 'Find the best cocktails and recipes with best ingredients for their creation. Have fun! Funny drinks!' },
       { hid: 'og:url', property: 'og:url', content: 'https://otejporze.pl' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'FunnyDrinks' },
       { hid: 'og:image', property: 'og:image', content: 'https://otejporze.pl/img/og_image.png' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'description', name: 'description', content: 'Find the best cocktails and recipes for their creation. Have fun! Funny drinks!' }
+      { hid: 'description', name: 'description', content: 'Find the best cocktails and recipes with best ingredients for their creation. Have fun! Funny drinks!' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
