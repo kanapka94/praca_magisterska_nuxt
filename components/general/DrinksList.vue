@@ -30,6 +30,10 @@
   .drinks {
     display: flex;
     flex-wrap: wrap;
+
+    @include mobile {
+      justify-content: center;
+    }
   }
 
   .item {
