@@ -21,15 +21,19 @@
       <pre>{{ TEST }}</pre>
       <link-component href="/lists/ingredients">
         Ingredients
+        <img src="/svg/ingredients.svg" alt="Ingredients" class="title-icon">
       </link-component>
       <link-component href="/lists/glasses">
         Types of glasses
+        <img src="/svg/glasses.svg" alt="Glasses" class="title-icon">
       </link-component>
       <link-component href="/lists/alcohol">
         Alcohol
+        <img src="/svg/magnificial.svg" alt="Magnifying glass" class="title-icon">
       </link-component>
       <link-component href="/lists/categories">
         Cocktails categories
+        <img src="/svg/category.svg" alt="Categories" class="title-icon">
       </link-component>
     </section>
   </div>
