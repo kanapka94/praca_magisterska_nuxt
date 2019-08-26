@@ -20,7 +20,7 @@
         class="item"
       >
         <nuxt-link :to="`/ingredient/${ingredient.name}`" class="link">
-          {{ ingredient.name }}
+          - {{ ingredient.name }}
           <span class="measure">{{ ingredient.measure }}</span>
         </nuxt-link>
       </li>
