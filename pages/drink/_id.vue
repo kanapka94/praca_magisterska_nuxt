@@ -81,7 +81,7 @@
     },
     async asyncData ({ app, error, params }) {
       const response = await app.$service.drinks.getDrinkById(params.id)
-      if (response.drinks === null) {
+      if (response === '') {
         error({ status: 404, message: 'Cocktail not found!' })
       }
       const drink = response.drinks[0]

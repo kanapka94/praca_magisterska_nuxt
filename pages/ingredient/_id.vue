@@ -45,7 +45,7 @@
       let response = await app.$service.ingredients.getIngredientByName(params.id)
       if (response.ingredients === null) {
         response = await app.$service.ingredients.getIngredientById(params.id)
-        if (response.ingredients === null) {
+        if (response === '') {
           error({ status: 404, message: 'Ingredient not found!' })
         }
       }
