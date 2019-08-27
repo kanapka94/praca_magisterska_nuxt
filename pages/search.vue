@@ -15,6 +15,7 @@
 
 <script>
   import { mapState } from 'vuex'
+  import debounce from 'lodash.debounce'
   import SearchBar from '@/components/home/SearchBar/index'
   import SearchResults from '@/components/search/SearchResults/index'
 
@@ -90,6 +91,11 @@
       placeholder () {
         return PLACEHOLDERS[this.form.criteria || 'name']
       }
+    },
+    watch: {
+      'form.text': debounce(function (value) {
+        this.handleSearch(value)
+      }, 150)
     },
     async asyncData ({ query, store }) {
       const payload = {

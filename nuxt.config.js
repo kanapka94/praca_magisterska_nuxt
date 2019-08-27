@@ -41,6 +41,9 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
       { rel: 'manifest', href: '/favicon/manifest.json' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Dosis:600|Open+Sans&display=swap' }
+    ],
+    script: [
+      process.env.NODE_ENV === 'production' && { src: '/js/hotjar.js' }
     ]
   },
 
