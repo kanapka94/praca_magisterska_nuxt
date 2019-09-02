@@ -37,6 +37,9 @@
           { hid: 'description', name: 'description', content: 'Search for the best drinks and choose the ones that suit you best' },
           { hid: 'og:title', property: 'og:title', content: 'Search cocktails - FunnyDrinks' },
           { hid: 'og:description', property: 'og:description', content: 'Search for the best drinks and choose the ones that suit you best' }
+        ],
+        link: [
+          { rel: 'canonical', href: 'https://otejporze.pl/search' }
         ]
       }
     },
