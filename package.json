@@ -23,7 +23,7 @@
     "express-sanitizer": "^1.0.5",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "nuxt": "2.8.0",
     "sass-loader": "^7.2.0"
   },
